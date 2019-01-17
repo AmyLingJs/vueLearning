@@ -29,8 +29,10 @@
     <div v-html="template1"></div>
     <a v-bind:href="url1">百度</a>
     <a :href="url2">慕课</a>
+
+    <button type="button" v-on:click="submit1">加法count</button>
     </div>
-    <button type="button" @click.native="window.alert(11)">加法count</button>
+
     <script src="https://cdn.bootcss.com/vue/2.5.21/vue.js"></script>
     <script>
         new Vue({

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>watch vs computed</title>
+</head>
+<body>
+    <div id="app">
+        {{msg}}
+        <p>
+                {{msg1}}
+        </p>
+       <p>
+         {{msg2}}
+       </p>
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.5.21/vue.js"></script>
+    <script>
+        var arr = "test"
+        var app = new Vue({
+            el:'#app',
+            data:{
+                msg:'hello vue',
+                msg1:'change'
+            },
+            watch:{
+                //watch只监听函数体内部的数据，本例为msg，不会监听msg1的值
+                msg:function(newval,oldval) {
+                    console.log("newvalue:",newval);
+                    console.log("oldvalue:",oldval)
+                }
+            },
+            computed:{
+                //computed当监听的内部的数据发生变化，本例为msg，msg1发生变化时会发生变化，
+                //外部的arr的值发生变化时不会马上引起msg2的值的变化，只有当msg跟msg1的值再次发生变化时才会是变化后的arr的值
+                msg2:function() { 
+                    return "computed:"+this.msg+","+this.msg1+","+arr
+            }
+            }
+        })
+    </script>
+</body>
+</html>

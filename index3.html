@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-if v-for 样式与class绑定</title>
+</head>
+<body>
+    <div id="app">
+        {{msg}}
+<div v-if="count>0">
+    判断1：count的值是{{count}},count大于0
+</div>
+<div v-else-if="count<0 && count>-5">
+    判断2：count的值是{{count}},count小于0大于-5
+</div>
+<div v-else>
+    判断3：count的值是{{count}}
+</div>
+
+
+<div v-for="item in list" >{{item.name}}今年{{item.age}}</div>
+<div v-for="item in list">
+    <div v-if="item.age>20" v-bind:style="msgStyle">{{item.name}}</div>
+    <div v-else v-bind:class="['ite1','active','more',{'another':true}]">{{item.age}}</div>
+</div>
+    </div>
+    
+        <script src="https://cdn.bootcss.com/vue/2.5.21/vue.js"></script>
+        <script>
+           var app = new Vue({
+               el:'#app',
+               data:{
+                   msg:'hello vue',
+                   count:0,
+                   msgStyle:{
+                       color:'red',
+                       textShadow:'0 0 2px yellow'
+
+                   },
+                   list:[
+                       {
+                           name:'liwei',
+                           age:20
+
+                   },
+                   {
+                       name:'校长',
+                       age:21
+
+                   }]
+               }
+           })
+
+           //v-else里面的表达式是无效的，自动是前面判断的补集 
+           //v-show会过滤掉不符合条件的项，不会显示，不管后面有没有v-else
+        </script>
+</body>
+</html>
