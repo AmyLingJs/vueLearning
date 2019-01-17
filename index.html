@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue入门</title>
+    <style>
+        .bg {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="bg">
+            hello world
+            {{msg}}
+        </div>
+        <div class="bg">
+
+            {{msg}}
+        </div>
+        {{count}}
+        {{(count+1)*10}}
+   
+    <div v-html="template1"></div>
+    <a v-bind:href="url1">百度</a>
+    <a :href="url2">慕课</a>
+    </div>
+    <button type="button" @click.native="window.alert(11)">加法count</button>
+    <script src="https://cdn.bootcss.com/vue/2.5.21/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                msg: 'hello vue',
+                count:0,
+                url1:'http://www.baidu.com',
+                url2:'http://www.imooc.com',
+                template1: '<div>hello template</div>'
+            },
+            methods:{
+                submit1:function() {
+                    this.count++
+                }
+            }
+          
+        })
+    </script>
+</body>
+
+</html>
