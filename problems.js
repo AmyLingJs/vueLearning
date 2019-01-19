@@ -21,4 +21,8 @@
   * 注意：需要全局安装vue serve:npm install -g @vue/cli-service-global
   * 安装时间有点点久，耐心等待
   * 安装成功后,执行，浏览器打开http://localhost:8080/
+  * 
+  * demo2为一个实例
+  * 1.利用vue ui创建文件目录demo2
+  * 2.
  */
