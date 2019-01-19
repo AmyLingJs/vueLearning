@@ -21,7 +21,7 @@
 
 
 <div v-for="item in list" >{{item.name}}今年{{item.age}}</div>
-<div v-for="item in list">
+<div v-for="item in list" v-bind:class="[{'aaa':true}]">
     <div v-if="item.age>20" v-bind:style="msgStyle">{{item.name}}</div>
     <div v-else v-bind:class="['ite1','active','more',{'another':true}]">{{item.age}}</div>
 </div>
