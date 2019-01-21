@@ -24,5 +24,19 @@
   * 
   * demo2为一个实例
   * 1.利用vue ui创建文件目录demo2
-  * 2.
+  * 2.需求分析：创建home页面、登录注册页面、新闻列表页面、个人中心页面、添加新闻页面
+  * vue二级路由配置
+  *  {
+  *    path:'/home',
+  * component:Home,
+  * children:[
+  *  { path:'list',component:list},
+  * { path:'user',component:user}
+  * ]
+  * }
+  * 
+  * 
+  * .vue页面跳转：
+  *   //跳转到home页面
+        this.$router.push({path:'/home'})
  */

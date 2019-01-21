@@ -34,7 +34,7 @@ export default {
         highlight:function (index) {
             this.current = index
         },
-        add:function(index) {
+        add:function() {
             if(this.current === "") { return}
             this.targets.push(this.list[this.current])
             this.current = ''
