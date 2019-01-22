@@ -39,4 +39,6 @@
   * .vue页面跳转：
   *   //跳转到home页面
         this.$router.push({path:'/home'})
+
+    添加样式，主要用到的是flex，真的很好用
  */

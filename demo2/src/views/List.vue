@@ -1,5 +1,6 @@
 <template>
     <div>
+        新闻列表
       <ul>
           <li v-for="(item,index) in pageLists" 
            :key="index">
