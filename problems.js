@@ -41,4 +41,16 @@
         this.$router.push({path:'/home'})
 
     添加样式，主要用到的是flex，真的很好用
+
+
+    router 子路由 懒加载
+      children:[
+        { path: 'list', component: () => import(/*webpackChunkName:list *//*'./views/List.vue')},
+        { path: 'user', component: () => import(/*webpackChunkName:user *//*'./views/User.vue') }
+      ]
+
+      this.$router.push
+      
+
+
  */

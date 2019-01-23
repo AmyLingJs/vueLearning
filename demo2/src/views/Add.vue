@@ -22,15 +22,36 @@ export default {
     data() {
         return {
             title:'',
-            content:''
+            content:'',
+            createDate:''
 
         }
     },
     methods:{
+        getMyDate() {
+            var current = new Date();
+            var year = current.getFullYear();
+            var month = current.getMonth() +1;
+            var day = current.getDate();
+            var hour = current.getHours();
+            var minute = current.getMinutes();
+            var second = current.getSeconds();
+            var result = year+"/"+month+"/"+day+" "+hour+":"+minute+":"+second;
+            return result;
+
+        },
         addNews() {
+            if(this.title === "" || this.content === "") {
+                alert("标题和内容不能为空");
+                return;
+
+            }
+            var currentTime = this.getMyDate();
+            
             store.commit('addItem',{
                 title:this.title,
-                content:this.content
+                content:this.content,
+                createDate:currentTime
             })
             this.title="";
             this.content="";
