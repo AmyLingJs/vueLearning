@@ -6,6 +6,7 @@ import Home from './views/Home.vue';
 // import User from './views/User.vue';
 import Add from './views/Add.vue';
 
+
 Vue.use(Router);
 
 export default new Router({
@@ -21,7 +22,8 @@ export default new Router({
       component:Home,
       children:[
         { path: 'list', component: () => import(/*webpackChunkName:list */'./views/List.vue')},
-        {path:'user',component:() =>import(/*webpackChunkName:user */'./views/User.vue')}
+        {path:'user',component:() =>import(/*webpackChunkName:user */'./views/User.vue')},
+        {  path: 'details', component:() =>import(/**webpackChunkName:details  */'./views/Details.vue') }
       ]
 
     },

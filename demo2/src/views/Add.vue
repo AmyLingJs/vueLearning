@@ -21,6 +21,7 @@ export default {
     store,
     data() {
         return {
+            id:0,
             title:'',
             content:'',
             createDate:''
@@ -33,10 +34,19 @@ export default {
             var year = current.getFullYear();
             var month = current.getMonth() +1;
             var day = current.getDate();
-            var hour = current.getHours();
-            var minute = current.getMinutes();
-            var second = current.getSeconds();
+            var hour = this.formatTime(current.getHours());
+            var minute = this.formatTime(current.getMinutes());
+            var second = this.formatTime(current.getSeconds());
+            
             var result = year+"/"+month+"/"+day+" "+hour+":"+minute+":"+second;
+            return result;
+
+        },
+        /** 
+         * 规范时间格式，如果小于10在前面加上0
+        */
+        formatTime(str1) {
+            var result = str1>=10 ? str1 : "0"+str1
             return result;
 
         },
@@ -47,8 +57,11 @@ export default {
 
             }
             var currentTime = this.getMyDate();
-            
+            console.log()
+            //id的值由store中的lists的长度决定
+            var newId = store.state.lists.length
             store.commit('addItem',{
+                id:newId,
                 title:this.title,
                 content:this.content,
                 createDate:currentTime

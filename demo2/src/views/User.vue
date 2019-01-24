@@ -2,7 +2,8 @@
     <div>
         <img src="../assets/logo.png" alt="">
         <div class="welcome">
-            欢迎来到个人中心
+           {{username}} 
+           <p> 欢迎来到个人中心</p>
  
         </div>
         <div class="button1">
@@ -17,6 +18,7 @@ export default {
     name:'User',
     data() {
         return {
+            username:localStorage.getItem("name")
 
         }
     }
