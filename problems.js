@@ -55,6 +55,8 @@
       新的需求：添加一个新闻的详情页
       这样的话就必须给每个新闻一个id，然后还要取得store里面的lists的长度，id是根据lists的长度定的，
       lists长度为1的话，接下来的新闻的id就为2
+
+      直接store.state.lists.length即可取到长度
       
 
 

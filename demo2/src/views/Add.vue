@@ -57,7 +57,7 @@ export default {
 
             }
             var currentTime = this.getMyDate();
-            console.log()
+        
             //id的值由store中的lists的长度决定
             var newId = store.state.lists.length
             store.commit('addItem',{
