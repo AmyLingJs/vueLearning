@@ -57,6 +57,14 @@
       lists长度为1的话，接下来的新闻的id就为2
 
       直接store.state.lists.length即可取到长度
+
+
+      新闻详情内容只给出20个字，然后...  
+      解决方法： v-text="getContent(index)
+
+      添加新闻的编辑 删除功能
+
+      鼠标悬停变色 v-on:mouseover v-on:mouseout
       
 
 

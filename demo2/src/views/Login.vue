@@ -61,11 +61,13 @@ export default {
     login() {
       const originName = localStorage.getItem("name");
       const originPassword = localStorage.getItem("password");
+      console.log(originName,originPassword)
       //this.name得到输入框中的用户名
       if (this.name === originName && this.password === originPassword) {
         //跳转到home页面
         this.$router.push({ path: "/home/list" });
       } else {
+        console.log(333333333333333)
         alert("用户名密码不正确");
       }
     },

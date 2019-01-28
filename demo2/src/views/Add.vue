@@ -28,6 +28,11 @@ export default {
 
         }
     },
+    computed: {
+        editTitle() {
+
+        }
+    },
     methods:{
         getMyDate() {
             var current = new Date();
@@ -38,7 +43,7 @@ export default {
             var minute = this.formatTime(current.getMinutes());
             var second = this.formatTime(current.getSeconds());
             
-            var result = year+"/"+month+"/"+day+" "+hour+":"+minute+":"+second;
+            var result = year+"-"+month+"-"+day+" "+hour+":"+minute;
             return result;
 
         },
