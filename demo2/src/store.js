@@ -31,7 +31,11 @@ export default new Vuex.Store({
   },
   mutations: {
     addItem(state, value) {
-      state.lists.push(value)
+    
+      state.lists.splice(value.id,0,value)
+    },
+    deleteItem(state,index) {
+      state.lists.splice(index,1)
     }
 
   },

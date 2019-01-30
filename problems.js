@@ -64,7 +64,22 @@
 
       添加新闻的编辑 删除功能
 
-      鼠标悬停变色 v-on:mouseover v-on:mouseout
+      鼠标悬停变色 v-on:mouseover v-on:mouseout 
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      ps:移动端貌似不行
       
 
 

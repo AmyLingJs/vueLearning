@@ -13,7 +13,7 @@
            v-on:mouseout="removeClassBlue($event)"
                ></div>
                <div class="xiangqing" v-on:click="editDetails(index)">编辑</div>
-               
+               <div class="xiangqing" v-on:click="deleteDetails(index)">删除</div>
                </div>
           <div class="news">{{item.createDate}}</div>
           </li>
@@ -39,11 +39,14 @@ export default {
             this.$router.push({path:'/add',query:{index:index}})
 
         },
+        deleteDetails(index) {
+            store.commit('deleteItem', index)
+
+        },
         getContent(index) {
             return this.pageLists[index].content.slice(0,20)+'...'
         },
         addClassBlue($event) {
-            console.log(1234)
             $event.currentTarget.className = "classblue"
         },
         removeClassBlue($event) {
@@ -100,6 +103,8 @@ li {
     font-size: 14px;
     font-style: italic;
     color: blue;
+    margin-right: 10px;
+    cursor: pointer;
 }
 </style>
 
